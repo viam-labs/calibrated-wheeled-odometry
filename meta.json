@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dl.viam.dev/module.schema.json",
+  "module_id": "viam-labs:calibrated-wheeled-odometry",
+  "visibility": "public",
+  "url": "https://github.com/viam-labs/calibrated-wheeled-odometry",
+  "description": "Wheeled odometry tuned for noisy single-pin rover encoders: spike rejection, command-inferred direction, per-wheel scale, and optional speed-dependent ticks calibration.",
+  "models": [
+    {
+      "api": "rdk:component:movement_sensor",
+      "model": "viam-labs:calibrated-wheeled-odometry:wheeled",
+      "description": "Drop-in replacement for builtin wheeled-odometry with calibration and noise handling for Viam Rover-style encoders.",
+      "markdown_link": "README.md#machine-configuration"
+    }
+  ],
+  "applications": null,
+  "markdown_link": "README.md",
+  "entrypoint": "dist/main",
+  "first_run": "",
+  "build": {
+    "build": "./build.sh",
+    "setup": "./setup.sh",
+    "path": "dist/archive.tar.gz",
+    "arch": [
+      "linux/amd64",
+      "linux/arm64",
+      "darwin/arm64"
+    ]
+  }
+}
