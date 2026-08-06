@@ -88,5 +88,5 @@ noise. For reliable odometry, add an RC low-pass on each encoder line (e.g.
 source venv/bin/activate
 pip install -r requirements.txt pytest
 PYTHONPATH=src pytest -q
-./build.sh   # produces dist/archive.tar.gz for viam module upload
+./build.sh   # produces module.tar.gz for viam module upload
 ```
