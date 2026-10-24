@@ -15,7 +15,6 @@ import math
 from dataclasses import dataclass
 from typing import List, Mapping, Optional, Sequence, Tuple
 
-
 TWO_PI = 2.0 * math.pi
 
 
