@@ -15,7 +15,6 @@ import math
 from dataclasses import dataclass
 from typing import List, Mapping, Optional, Sequence, Tuple
 
-
 TWO_PI = 2.0 * math.pi
 
 
@@ -127,8 +126,7 @@ def interpolate_ticks_per_rotation(
                 return float(b.ticks_per_rotation)
             t = (speed_mps - a.speed_mps) / span
             return float(
-                a.ticks_per_rotation
-                + t * (b.ticks_per_rotation - a.ticks_per_rotation)
+                a.ticks_per_rotation + t * (b.ticks_per_rotation - a.ticks_per_rotation)
             )
     return float(default)
 
@@ -285,8 +283,12 @@ def step_odometry(
 
     if counts_are_revolutions:
         # Convert filtered tick-equivalents back to revolutions for distance.
-        delta_revs_l = (filt_l / cfg.ticks_per_rotation) if cfg.ticks_per_rotation else 0.0
-        delta_revs_r = (filt_r / cfg.ticks_per_rotation) if cfg.ticks_per_rotation else 0.0
+        delta_revs_l = (
+            (filt_l / cfg.ticks_per_rotation) if cfg.ticks_per_rotation else 0.0
+        )
+        delta_revs_r = (
+            (filt_r / cfg.ticks_per_rotation) if cfg.ticks_per_rotation else 0.0
+        )
         left_m = revolutions_to_meters(
             left_sign * delta_revs_l,
             wheel_circumference_m=cfg.wheel_circumference_m,

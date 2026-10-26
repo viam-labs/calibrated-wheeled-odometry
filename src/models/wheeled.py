@@ -88,7 +88,9 @@ class CalibratedWheeledOdometry(MovementSensor, EasyResource):
 
         base_name = attrs.get("base") or fields["base"].string_value
         left_motors = attrs.get("left_motors") or _list_strings(fields, "left_motors")
-        right_motors = attrs.get("right_motors") or _list_strings(fields, "right_motors")
+        right_motors = attrs.get("right_motors") or _list_strings(
+            fields, "right_motors"
+        )
         left_encoders = attrs.get("left_encoders") or _list_strings(
             fields, "left_encoders"
         )
@@ -155,7 +157,9 @@ class CalibratedWheeledOdometry(MovementSensor, EasyResource):
             fields["base"].string_value if "base" in fields else ""
         )
         left_motors = attrs.get("left_motors") or _list_strings(fields, "left_motors")
-        right_motors = attrs.get("right_motors") or _list_strings(fields, "right_motors")
+        right_motors = attrs.get("right_motors") or _list_strings(
+            fields, "right_motors"
+        )
         if not base:
             raise ValueError("base is required")
         if not left_motors or not right_motors:
